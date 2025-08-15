@@ -29,10 +29,12 @@ endif()
 
 include_directories(${libsndfile_BINARY_DIR}/src)
 
-if(WIN32)
-	add_definitions(-static -static-libgcc)
-endif()
-
 add_executable(tcwfutil tcwfutil.c)
 
 target_link_libraries(tcwfutil PRIVATE sndfile)
+
+set_target_properties(tcwfutil PROPERTIES C_STANDARD 11)
+
+if(WIN32)
+	target_link_options(tcwfutil PUBLIC -static -static-libgcc)
+endif()
