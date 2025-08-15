@@ -70,7 +70,7 @@
         },
         {
           "name" : "Prepare artifacts for release",
-          "run" : "7z a -tzip ${{ github.event.repository.name }}-ubuntu.zip build/tcwfutil"
+          "run" : "7z a -tzip ${{ github.event.repository.name }}-ubuntu.zip build/${{ github.event.repository.name }}"
         },
         {
           "uses" : "actions/upload-artifact@v4",
@@ -168,7 +168,7 @@
         },
         {
           "name" : "Prepare artifacts for release",
-          "run" : "7z a -tzip ${{ github.event.repository.name }}-win32-${{ matrix.platform.cmake-system-compiler }}-${{ matrix.platform.compiler }}.zip build/tcwfutil.exe"
+          "run" : "7z a -tzip ${{ github.event.repository.name }}-win32-${{ matrix.platform.cmake-system-compiler }}-${{ matrix.platform.compiler }}.zip build/${{ github.event.repository.name }}.exe"
         },
         {
           "uses" : "actions/upload-artifact@v4",
@@ -217,7 +217,7 @@
         },
         {
           "name" : "Prepare artifacts for release",
-          "run" : "7z a -tzip ${{ github.event.repository.name }}-macos.zip build/tcwfutil"
+          "run" : "7z a -tzip ${{ github.event.repository.name }}-macos.zip build/${{ github.event.repository.name }}"
         },
         {
           "uses" : "actions/upload-artifact@v4",
