@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0...3.5)
+cmake_minimum_required(VERSION 3.0...3.10)
 project(tcwfutil)
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -20,6 +20,7 @@ FetchContent_Declare(
 	CMAKE_ARGS        "-Wno-dev"
 )
 
+set(CMAKE_POLICY_VERSION_MINIMUM 3.10 CACHE INTERNAL "policy version minimum")
 FetchContent_MakeAvailable(libsndfile)
 
 if(NOT libsndfile_POPULATED)
